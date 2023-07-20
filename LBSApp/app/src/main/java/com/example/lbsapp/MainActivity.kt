@@ -21,6 +21,7 @@ class MainActivity : AppCompatActivity(){
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
 
+        // Google Map 프래그먼트 동적 추가
         val mapFragment = SupportMapFragment.newInstance()
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView2, mapFragment).commit()
 
