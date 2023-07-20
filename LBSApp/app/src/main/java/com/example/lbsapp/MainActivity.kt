@@ -9,7 +9,7 @@ import com.google.android.gms.maps.MapsInitializer
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 
-class MainActivity : AppCompatActivity(){
+class MainActivity : AppCompatActivity(), OnMapReadyCallback{
 
     private lateinit var activityMainBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,5 +25,8 @@ class MainActivity : AppCompatActivity(){
         val mapFragment = SupportMapFragment.newInstance()
         supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView2, mapFragment).commit()
 
+    }
+
+    override fun onMapReady(p0: GoogleMap) {
     }
 }
