@@ -4,18 +4,25 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import com.example.lbsapp.databinding.ActivityMainBinding
+import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.MapsInitializer
+import com.google.android.gms.maps.OnMapReadyCallback
+import com.google.android.gms.maps.SupportMapFragment
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(){
 
     private lateinit var activityMainBinding: ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         installSplashScreen()
-        MapsInitializer.initialize(this@MainActivity, MapsInitializer.Renderer.LATEST, null)
+
 
         activityMainBinding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(activityMainBinding.root)
+
+        val mapFragment = SupportMapFragment.newInstance()
+        supportFragmentManager.beginTransaction().add(R.id.fragmentContainerView2, mapFragment).commit()
+
     }
 }
